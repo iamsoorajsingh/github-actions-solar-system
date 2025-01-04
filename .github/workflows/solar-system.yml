@@ -59,9 +59,9 @@ jobs:
              if: always()
              uses: actions/upload-artifact@v4
              with:
-              - name: Code-Coverage-Result
-              - path: coverage
-              - retention-days: 5
+               name: Code-Coverage-Result
+               path: coverage
+               retention-days: 5
 
           
           
