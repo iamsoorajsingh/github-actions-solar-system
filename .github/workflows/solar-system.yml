@@ -37,8 +37,8 @@ jobs:
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
     code-coverage:
-        name: Unit Testing
         runs-on: ubuntu-latest
         steps:
            - name: Checkout Repository
@@ -46,19 +46,19 @@ jobs:
 
            - name: Setup NodeJS Version
              uses: actions/setup-node@v4
-            with:
+             with:
               node-version: 18 
 
            - name: Install Dependencies
              run: npm install
 
            - name: code-coverage 
-             run: npm run code-coverage
+             run: npm run coverage
 
            - name: Archive Test Result
              if: always()
              uses: actions/upload-artifact@v4
-             config:
+             with:
               - name: Code-Coverage-Result
               - path: coverage
               - retention-days: 5
